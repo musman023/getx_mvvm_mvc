@@ -13,7 +13,7 @@ class RoundButton extends StatelessWidget {
     this.loading = false,
     required this.title,
     this.height = 50,
-    this.width = 60,
+    this.width = 200,
     required this.onPress,
     this.textColor = AppColor.primaryTextColor,
     this.buttonColor = AppColor.primaryButtonColor,
@@ -21,22 +21,27 @@ class RoundButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: buttonColor,
-        borderRadius: BorderRadius.circular(12),
+    return InkWell(
+      onTap: onPress,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: buttonColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Center(
+          child: loading
+              ? const CircularProgressIndicator()
+              : Text(
+                  title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(color: AppColor.whiteColor),
+                ),
+        ),
       ),
-      child: loading
-          ? const Center(child: CircularProgressIndicator())
-          : Text(
-              title,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: AppColor.whiteColor),
-            ),
     );
   }
 }
