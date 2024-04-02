@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:getxmvc/res/colors/app_color.dart';
 import 'package:getxmvc/res/components/round_button.dart';
@@ -50,6 +47,7 @@ class _LoginViewState extends State<LoginView> {
                       if (value!.isEmpty) {
                         Utils.snackBar('Email', 'Enter email');
                       }
+                      return null;
                     },
                     onFieldSubmitted: (value) {
                       Utils.fieldFocusChange(

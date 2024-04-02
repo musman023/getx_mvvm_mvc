@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getxmvc/res/assets/image_assets.dart';
 import 'package:getxmvc/res/colors/app_color.dart';
 import 'package:getxmvc/view_model/services/splash_services.dart';
 
